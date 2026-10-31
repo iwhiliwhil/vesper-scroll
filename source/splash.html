@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #F5F3FF;
+    background:
+      radial-gradient(70% 40% at 20% 30%, rgba(253, 99, 131, .16), transparent 70%),
+      radial-gradient(70% 40% at 85% 55%, rgba(49, 88, 240, .22), transparent 70%),
+      radial-gradient(120% 60% at 50% 110%, #1E0A33 0%, #140A39 50%, #0B0620 100%);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  .status { display: flex; justify-content: space-between; padding: 18px 30px 0; font-size: 16px; font-weight: 600; }
+  .status i { display: block; width: 25px; height: 12px; border: 1.5px solid #F5F3FF; border-radius: 4px; position: relative; }
+  .status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: #F5F3FF; border-radius: 1.5px; }
+  .glow { position: absolute; left: 50%; top: 330px; width: 380px; height: 380px; margin: -190px 0 0 -190px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(161, 74, 208, .45), rgba(249, 77, 163, .12) 45%, transparent 70%); }
+  .logo { position: absolute; left: 50%; top: 330px; width: 250px; transform: translate(-50%, -50%); }
+  .name { position: absolute; left: 0; right: 0; top: 500px; text-align: center; font-weight: 700; font-size: 46px; letter-spacing: -0.04em; }
+  .slogan { position: absolute; left: 0; right: 0; top: 562px; text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 22px; color: #A9A3C7; }
+  .bar { position: absolute; left: 50%; bottom: 70px; width: 120px; height: 4px; margin-left: -60px; border-radius: 4px; background: rgba(245, 243, 255, .12); overflow: hidden; }
+  .bar i { display: block; width: 62%; height: 100%; border-radius: 4px; background: linear-gradient(90deg, #8CCBFC, #3158F0, #A14AD0, #F94DA3, #FC6381); }
+</style>
+</head>
+<body>
+  <div class="status"><span>9:41</span><i></i></div>
+  <div class="glow"></div>
+  <img class="logo" src="logo.png" alt="">
+  <div class="name">Vesper</div>
+  <div class="slogan">Совпадение ваших миров</div>
+  <div class="bar"><i></i></div>
+</body>
+</html>

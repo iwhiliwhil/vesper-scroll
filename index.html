@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vesper</title>
+<meta name="description" content="Vesper — знакомства по характеру.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="frames/0001.webp">
+<link rel="preload" as="image" href="media/logo.webp">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="bg-layer bg-dusk" data-bg="dusk"></div>
+  <div class="bg-layer bg-violet" data-bg="violet"></div>
+  <div class="bg-layer bg-warm" data-bg="warm"></div>
+</div>
+<div class="blobs" aria-hidden="true">
+  <div class="blob blob-violet"></div>
+  <div class="blob blob-cool"></div>
+  <div class="blob blob-warm"></div>
+  <div class="blob blob-magenta"></div>
+</div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"><i id="progressFill"></i></div>
+
+<main>
+
+  <section id="hero" class="scene" data-bg-state="night">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-logo"><img src="media/logo.webp" alt="Логотип Vesper: два профиля, тёплый и холодный, сцеплены как пазл"></div>
+    <div class="seq-wrap">
+      <canvas id="seq" width="900" height="1125" aria-label="Телефон с приложением Vesper"></canvas>
+    </div>
+    <div class="hero-head">
+      <h1 class="hero-title">Vesper</h1>
+      <p class="hero-sub">Знакомства по характеру</p>
+    </div>
+    <p class="cap cap-l">Знакомит тех, кто правда подходит.</p>
+    <p class="cap cap-r">Характер важнее фото.</p>
+    <p class="cap cap-l">И объясняет, почему вы пара.</p>
+  </section>
+
+  <section id="manifest" class="scene" data-bg-state="night">
+    <p class="manifest-text">Глаза выбирают за секунду. А остаёмся мы из‑за характера. Vesper находит того, с кем он совпадает.</p>
+  </section>
+
+  <section id="numbers" class="scene" data-bg-state="dusk">
+    <div class="orbit-deco" data-speed="-0.6" aria-hidden="true">
+      <svg viewBox="0 0 600 600"><circle cx="300" cy="300" r="290"/><circle cx="300" cy="300" r="210"/><circle cx="300" cy="300" r="130"/></svg>
+    </div>
+    <h2 class="numbers-title grad-lines" data-speed="0.2">Метод, а не догадки</h2>
+    <div class="stats">
+      <div class="stat" data-speed="0.9">
+        <span class="stat-num" data-count="14">0</span>
+        <span class="stat-label">типов личности в основе подбора</span>
+      </div>
+      <div class="stat" data-speed="0.4">
+        <span class="stat-num"><small>до</small><span data-count="5">0</span></span>
+        <span class="stat-label">радикалов у каждого типа</span>
+      </div>
+      <div class="stat" data-speed="1.2">
+        <span class="stat-num" data-count="60">0</span>
+        <span class="stat-label">вопросов вместо анкеты «о себе»</span>
+      </div>
+      <div class="stat" data-speed="0.6">
+        <span class="stat-num" data-count="15">0</span>
+        <span class="stat-label">минут до первых совпадений</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="scene" data-bg-state="violet">
+    <div class="how-copy">
+      <div class="how-steps" aria-hidden="true"><i class="how-fill"></i></div>
+      <div class="how-texts">
+        <div class="how-text">
+          <span class="how-num">1</span>
+          <h2 class="grad">Пройди тест</h2>
+          <p>60 вопросов. Правильных ответов нет.</p>
+        </div>
+        <div class="how-text">
+          <span class="how-num">2</span>
+          <h2 class="grad">Узнай свой тип</h2>
+          <p>Твой тип личности и его оттенки.</p>
+        </div>
+        <div class="how-text">
+          <span class="how-num">3</span>
+          <h2 class="grad">Встреть своего человека</h2>
+          <p>Каждый день — те, с кем вы совпадаете. И почему.</p>
+        </div>
+      </div>
+    </div>
+    <div class="how-device" aria-hidden="true">
+      <div class="device">
+        <div class="device-screen">
+          <div class="scr scr-test">
+            <div class="bar"><i class="bar-fill"></i></div>
+            <div class="q-meta">Вопрос 18 из 60</div>
+            <div class="q-text">Друг отменил встречу за час до неё. Что ты сделаешь?</div>
+            <div class="opts">
+              <div class="opt">Расстроюсь, но промолчу</div>
+              <div class="opt opt-pick"><span>Сразу предложу другой день</span><i class="opt-glow"></i></div>
+              <div class="opt">Найду, чем заняться самому</div>
+              <div class="opt">Позвоню и выясню, что случилось</div>
+            </div>
+          </div>
+          <div class="scr scr-type">
+            <svg class="glyph" viewBox="0 0 100 100">
+              <g class="glyph-spin">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(238,240,247,.14)"/>
+                <circle cx="96" cy="50" r="2.4" fill="#8CCBFC"/>
+              </g>
+              <g class="glyph-spin2">
+                <circle cx="50" cy="50" r="32" fill="none" stroke="rgba(238,240,247,.24)"/>
+                <circle cx="50" cy="18" r="2.2" fill="#FC6381"/>
+              </g>
+              <circle cx="50" cy="50" r="18" fill="none" stroke="rgba(238,240,247,.34)"/>
+              <circle cx="50" cy="50" r="5" fill="#F94DA3"/>
+            </svg>
+            <div class="t-title">Профиль готов</div>
+            <div class="t-text">Теперь мы знаем, как ты общаешься, споришь и проявляешь заботу.</div>
+            <div class="t-traits">
+              <div><span>Решения</span><b><i style="--w:.78"></i></b></div>
+              <div><span>Общение</span><b><i style="--w:.62"></i></b></div>
+              <div><span>Забота</span><b><i style="--w:.86"></i></b></div>
+            </div>
+          </div>
+          <div class="scr scr-match">
+            <div class="m-card">
+              <div class="m-ring"><span class="m-pct" data-count="92">0</span><small>%</small></div>
+              <div class="m-meta"><b>Аня, 24</b><span>2 км от тебя</span></div>
+            </div>
+            <div class="m-why">Почему вы совпали</div>
+            <div class="m-chips">
+              <span>Похоже смотрите на планы</span>
+              <span>Дополняете друг друга</span>
+              <span>Один ритм жизни</span>
+            </div>
+            <div class="m-btn">Написать</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reveal" class="scene" data-bg-state="violet">
+    <p class="reveal-lead">Совпадение — только начало</p>
+    <div class="reveal-frame">
+      <img class="reveal-img" src="media/duo.webp" alt="Два телефона с приложением Vesper: совпадение и первая переписка">
+      <div class="reveal-shade"></div>
+      <div class="reveal-copy">
+        <h2>Два человека. Одно совпадение.</h2>
+        <p>Темы для первого сообщения уже готовы.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cards" class="scene" data-bg-state="dusk">
+    <div class="cards-head">
+      <h2 class="grad-lines">Не очередная лента анкет</h2>
+    </div>
+    <div class="track">
+      <article class="card">
+        <svg class="card-art" viewBox="0 0 200 140" aria-hidden="true"><circle cx="78" cy="70" r="44" class="stroke-c"/><circle cx="122" cy="70" r="44" class="stroke-a"/><circle class="fill" cx="100" cy="70" r="5"/></svg>
+        <h3>Характер вместо фото</h3>
+        <p>Сначала совместимость, потом лицо.</p>
+      </article>
+      <article class="card">
+        <svg class="card-art" viewBox="0 0 200 140" aria-hidden="true"><rect x="30" y="40" width="34" height="60" rx="8" class="stroke-c"/><rect x="83" y="30" width="34" height="80" rx="8" class="stroke-a"/><rect x="136" y="40" width="34" height="60" rx="8"/></svg>
+        <h3>Несколько совпадений в день</h3>
+        <p>Только те, с кем стоит познакомиться.</p>
+      </article>
+      <article class="card">
+        <svg class="card-art" viewBox="0 0 200 140" aria-hidden="true"><path d="M40 100 L80 60 L110 80 L160 34" class="stroke-c"/><circle class="fill" cx="160" cy="34" r="5"/></svg>
+        <h3>Понятно, почему вы пара</h3>
+        <p>Каждое совпадение — с объяснением.</p>
+      </article>
+      <article class="card">
+        <svg class="card-art" viewBox="0 0 200 140" aria-hidden="true"><rect x="36" y="38" width="90" height="34" rx="17" class="stroke-c"/><rect x="74" y="80" width="90" height="34" rx="17" class="stroke-a"/></svg>
+        <h3>Есть о чём поговорить</h3>
+        <p>Готовые темы из того, что вас объединяет.</p>
+      </article>
+      <article class="card">
+        <svg class="card-art" viewBox="0 0 200 140" aria-hidden="true"><circle cx="100" cy="70" r="44" class="stroke-c"/><path d="M100 70 L100 36" class="stroke-a"/><path d="M100 70 L124 82"/></svg>
+        <h3>Тест один раз</h3>
+        <p>15 минут — и подбор работает сам.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="final" class="scene" data-bg-state="warm">
+    <div class="final-glow" aria-hidden="true"></div>
+    <div class="final-inner">
+      <div class="final-logo" role="img" aria-label="Логотип Vesper">
+        <img class="final-warm" src="media/logo-warm.webp" alt="">
+        <img class="final-cool" src="media/logo-cool.webp" alt="">
+      </div>
+      <p class="final-mark">Vesper</p>
+      <h2 class="final-line grad-lines">Совпадения не случайны</h2>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

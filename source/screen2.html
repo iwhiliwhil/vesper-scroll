@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 390px; height: 844px; overflow: hidden; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #F5F3FF;
+    background:
+      radial-gradient(120% 50% at 50% 115%, #2B1450 0%, #1A1840 45%, transparent 75%),
+      #0B0620;
+    -webkit-font-smoothing: antialiased;
+  }
+  .status { display: flex; justify-content: space-between; padding: 18px 30px 0; font-size: 16px; font-weight: 600; }
+  .status i { display: block; width: 25px; height: 12px; border: 1.5px solid #F5F3FF; border-radius: 4px; position: relative; }
+  .status i::after { content: ""; position: absolute; inset: 1.5px 5px 1.5px 1.5px; background: #F5F3FF; border-radius: 1.5px; }
+  .head { display: flex; align-items: center; gap: 14px; padding: 30px 22px 22px; border-bottom: 1px solid rgba(238,240,247,.08); }
+  .ava { width: 52px; height: 52px; border-radius: 50%; background: radial-gradient(60% 60% at 50% 35%, rgba(238,240,247,.35), transparent 70%), linear-gradient(160deg, #2A2F66, #151A40); }
+  .head b { display: block; font-size: 20px; font-weight: 500; }
+  .head span { font-size: 14px; color: #FD67A7; }
+  .note { margin: 26px auto 0; width: max-content; font-size: 14px; color: #A9A3C7; padding: 8px 14px; border-radius: 99px; border: 1px solid rgba(238,240,247,.1); }
+  .msgs { padding: 22px 18px; display: grid; gap: 12px; }
+  .m { max-width: 78%; padding: 14px 16px; border-radius: 22px; font-size: 17px; line-height: 1.35; }
+  .in { background: linear-gradient(135deg, #2A33D3, #3158F0); border-bottom-left-radius: 8px; }
+  .out { background: linear-gradient(135deg, #FC6381, #FD67A7); color: #fff; justify-self: end; border-bottom-right-radius: 8px; }
+  .hint { position: absolute; left: 18px; right: 18px; bottom: 112px; }
+  .hint p { margin: 0 0 10px 4px; font-size: 14px; color: #A9A3C7; }
+  .hint div { display: flex; gap: 8px; }
+  .hint span { font-size: 14px; padding: 9px 13px; border-radius: 99px; border: 1px solid rgba(238,240,247,.16); white-space: nowrap; }
+  .input { position: absolute; left: 18px; right: 18px; bottom: 34px; height: 58px; border-radius: 99px; border: 1px solid rgba(238,240,247,.16); display: flex; align-items: center; padding: 0 8px 0 22px; justify-content: space-between; color: #A9A3C7; font-size: 16px; }
+  .input i { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #8CCBFC, #A14AD0 50%, #FC6381); }
+</style>
+</head>
+<body>
+  <div class="status"><span>9:41</span><i></i></div>
+  <div class="head"><div class="ava"></div><div><b>Аня</b><span>Совместимость 92%</span></div></div>
+  <div class="note">Вы совпали сегодня</div>
+  <div class="msgs">
+    <div class="m out">Привет! Vesper пишет, что мы оба любим планировать заранее. Правда?</div>
+    <div class="m in">Правда 😄 У меня даже выходные расписаны. Ты как?</div>
+    <div class="m out">Тогда предлагаю вписать туда кофе в субботу</div>
+  </div>
+  <div class="hint">
+    <p>О чём ещё поговорить</p>
+    <div><span>Любимые поездки</span><span>Как вы отдыхаете</span></div>
+  </div>
+  <div class="input">Сообщение<i></i></div>
+</body>
+</html>
